@@ -83,5 +83,5 @@ class Network(nn.Module):
         out = self.mv(attn)
         out = self.dropout(out)
         commonz = normalize(self.commonfeature_contrastive_module(out + catz), dim=1)
-        weights, raw_weights = TPL(commonz.t(), 10)
-        return commonz, raw_weights
+        _, P = TPL(commonz.t(), 10)
+        return commonz, P
