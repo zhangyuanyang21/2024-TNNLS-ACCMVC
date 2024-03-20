@@ -89,7 +89,7 @@ def contrastive_train(epoch):
         commonz, P = model.ASAF(xs)
         loss_list = []
         for v in range(view):
-            loss_list.append(1*criterion.forward_feature(hs[v], commonz, P))
+            loss_list.append(1*criterion.CwCL(hs[v], commonz, P))
             loss_list.append(mes(xs[v], xrs[v]))
         loss = sum(loss_list)
         loss.backward()
