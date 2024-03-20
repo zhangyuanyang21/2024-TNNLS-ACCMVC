@@ -2,7 +2,7 @@ from torch import nn
 import torch.nn.functional as F
 from torch.nn.functional import normalize
 import torch
-from utils import cal_weights_via_CAN
+from utils import TPL
 
 
 class Encoder(nn.Module):
@@ -83,5 +83,5 @@ class Network(nn.Module):
         out = self.mv(attn)
         out = self.dropout(out)
         commonz = normalize(self.commonfeature_contrastive_module(out + catz), dim=1)
-        weights, raw_weights = cal_weights_via_CAN(commonz.t(), 10)
+        weights, raw_weights = TPL(commonz.t(), 10)
         return commonz, raw_weights
