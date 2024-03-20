@@ -28,7 +28,7 @@ def distance(X, Y, square=True):
     return result
 
 
-def cal_weights_via_CAN(X, num_neighbors, links=0):
+def TPL(X, num_neighbors, links=0):
     """
     Solve Problem: Clustering-with-Adaptive-Neighbors(CAN)
     :param X: d * n
