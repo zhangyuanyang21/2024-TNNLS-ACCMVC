@@ -71,8 +71,7 @@ class Network(nn.Module):
             xrs.append(xr)
         return  xrs, zs, hs
 
-    # ACCMVC-TPL-before-MLP-10.17
-    def GCFAgg(self, xs):
+    def ASAF(self, xs):
         zs = []
         for v in range(self.view):
             x = xs[v]
