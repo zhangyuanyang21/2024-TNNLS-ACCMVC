@@ -13,7 +13,7 @@ import time
 import datetime
 import matplotlib.pyplot as plt
 import scipy.io
-from utils import cal_weights_via_CAN
+
 # os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 # Prokaryotic
 # Synthetic3d
@@ -86,18 +86,16 @@ def contrastive_train(epoch):
         optimizer.zero_grad()
         # xrs, zs, hs, commonz, S = model(xs)
         xrs, zs, hs = model(xs)
-        commonz, S = model.GCFAgg(xs)
+        commonz, P = model.ASAF(xs)
         loss_list = []
         for v in range(view):
-            loss_list.append(1*criterion.forward_feature(hs[v], commonz, S))
-            # loss_list.append(1*criterion.forward_feature_original(hs[v], commonz))
+            loss_list.append(1*criterion.forward_feature(hs[v], commonz, P))
             loss_list.append(mes(xs[v], xrs[v]))
         loss = sum(loss_list)
         loss.backward()
         optimizer.step()
         tot_loss += loss.item()
     print('Epoch {}'.format(epoch), 'Loss:{:.6f}'.format(tot_loss/len(data_loader)))
-    #返回loss是为了画loss
     return  tot_loss / len(data_loader)
 
 losses = []
