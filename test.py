@@ -4,8 +4,6 @@ from metric import valid
 import argparse
 from dataloader import load_data
 
-# MNIST-USPS
-# BDGP
 # CCV
 # Fashion
 # Caltech-2V
