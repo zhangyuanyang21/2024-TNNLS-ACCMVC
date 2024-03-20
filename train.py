@@ -146,7 +146,6 @@ for i in range(T):
             print('---------train over---------')
             print(Dataname)
             print('Clustering results: ACC, NMI, PUR, ARI, EPOCH, LOSS')
-            print('{:.4f} {:.4f} {:.4f} {:.4f} {} {:.6f}'.format(acc, nmi, pur, ari, epoch, loss_))
             print('{:.4f} {:.4f} {:.4f} {:.4f} {} {:.6f}'.format(best_acc, best_epoch_nmi, best_epoch_pur, best_epoch_ari, best_epoch, best_epoch_loss))
             state = model.state_dict()
             torch.save(state, './models/' + args.dataset + '.pth')
