@@ -2,7 +2,7 @@
 Anchor-sharing and Cluster-wise Contrastive Learning Network for Multi-View Representation Learning
 ## 1. Framework
 
-<img src=""  width="897" height="317" />
+<img src="https://github.com/zhangyuanyang21/ACCMVC/blob/main/ACCMVC.png"  width="897" height="317" />
 
 Overall framework including ASFA module and TPL, and CwCL module. In ASFA, we focus on learning sharing anchor representations that are not
 from the samples in a batch and shared across all data. Moreover, we compute the bipartite graph relationship between samples and anchors, which is leveraged
