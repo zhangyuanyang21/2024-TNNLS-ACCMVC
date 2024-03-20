@@ -17,20 +17,12 @@ from utils import cal_weights_via_CAN
 # os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 # Prokaryotic
 # Synthetic3d
-# BDGP
-# Fashion
-# CCV
-# Hdigit
 # Aloi_deep
-# YouTubeFace
-# Cifar10
-# Cifar100
-# MNIST-USPS
 # Caltech-2V
 # Caltech-3V
 # Caltech-4V
 # Caltech-5V
-Dataname = 'Fashion'
+Dataname = 'Aloi_deep'
 parser = argparse.ArgumentParser(description='train')
 parser.add_argument('--dataset', default=Dataname)
 parser.add_argument('--batch_size', default=256, type=int)
