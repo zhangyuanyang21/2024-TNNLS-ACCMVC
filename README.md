@@ -8,6 +8,7 @@ Overall framework including ASFA module and TPL, and CwCL module. In ASFA, we fo
 from the samples in a batch and shared across all data. Moreover, we compute the bipartite graph relationship between samples and anchors, which is leveraged
 to enhance the self-representations of the samples. In the CwCL, we integrate the learned transition probability to CL and this makes the representations with
 high transition probability be more similar.
+
 ## Requirements
 
 pytorch==1.12.1
@@ -19,6 +20,7 @@ scikit-learn>=1.0.2
 ## Experiment Results
 
 <img src="ACCMVC_result.png"  width="897"  />
+
 ## Citation
 
 If you find our work useful in your research, please consider citing:
