@@ -54,7 +54,7 @@ def inference(loader, model, device, view, data_size):
             xs[v] = xs[v].to(device)
         with torch.no_grad():
             # xrs, zs, hs, commonz, S = model(xs)
-            commonz, _ = model.GCFAgg(xs)
+            commonz, _ = model.ASAF(xs)
             # commonz = commonz.detach()
             commonZ.extend(commonz.cpu().detach().numpy())
         labels_vector.extend(y.numpy())
